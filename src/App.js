@@ -7,7 +7,7 @@ import About from "./About";
 import Sales from "./Sales";
 import CartContent from "./CartContent";
 
-import { Route, Routes } from "react-router-dom";
+import { HashRouter as Route, Routes } from "react-router-dom";
 import FinalFooter from "./FinalFooter";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 import CheckPointButton from "./CheckPointButton";
