@@ -18,11 +18,13 @@ const CheckPointButton = () => {
       return total;
     }, 0);
   };
+
   const handleSubmitOrder = () => {
     // Get the product IDs from the cart
     const productIds = cart.map((product) => product.id);
     navigate("/Sales", { state: { productIds, cart } });
   };
+
   return (
     <div>
       <h2 style={{ textAlign: "center", marginTop: "4em" }}>

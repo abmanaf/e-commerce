@@ -1,15 +1,11 @@
 /*
-import React, {  } from 'react';
+import React from 'react';
 import Imageurl from './Photo';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
-
+import { useNavigate } from 'react-router-dom';
 
 const CartContent = ({ cart, updateCart, updateCartCount }) => {
-  const navigate = useNavigate(); // Initialize the navigate function
+  const navigate = useNavigate();
   const [selectedProduct, setSelectedProduct] = React.useState(null);
-
-  
-
 
   const increaseQuantity = (productId) => {
     const updatedCart = cart.map((product) => {
@@ -23,7 +19,6 @@ const CartContent = ({ cart, updateCart, updateCartCount }) => {
     });
 
     updateCart(updatedCart);
-    //updateCartCount(calculateTotalCount(updatedCart));
   };
 
   const reduceQuantity = (productId) => {
@@ -38,14 +33,13 @@ const CartContent = ({ cart, updateCart, updateCartCount }) => {
     });
 
     updateCart(updatedCart);
-    //updateCartCount(calculateTotalCount(updatedCart));
   };
 
   const removeFromCart = (productId) => {
     const productToRemove = cart.find((product) => product.id === productId);
 
     const confirmDelete = window.confirm(`Are you sure you want to remove ${productToRemove.name} from the cart?`);
-    
+
     if (confirmDelete) {
       const updatedCart = cart.filter((product) => product.id !== productId);
       updateCart(updatedCart);
@@ -56,38 +50,17 @@ const CartContent = ({ cart, updateCart, updateCartCount }) => {
   const calculateTotalCount = (cart) => {
     return cart.reduce((count, product) => count + product.count, 0);
   };
+
   const calculateTotalAmount = (cart) => {
     return cart.reduce((total, product) => {
       return total + product.count * parseFloat(product.price);
     }, 0).toFixed(2);
   };
 
-  /*const handleCheckPointClick = () => {
-    // Here, you can pass the cart data or any necessary information to the CheckPointButton component
-    // For example, you can pass the cart data as a prop.
-    history.push({
-      pathname: '/checkpoint', // Define the route path for the CheckPointButton page
-      state: { cart }, // Pass the cart data as a prop
-    });
-  };
-  
   const handleCheckpointClick = () => {
-
-    navigate('/CheckPointButton', { state: { product } }); // Use the navigate function to navigate to the '/checkpoint' route
+    const productIds = cart.map((product) => product.id);
+    navigate('/CheckPointButton', { state: { productIds, cart } });
   };
-  */
-
-// Inside the CartContent component where you navigate to CheckPointButton
-/*
-const handleCheckpointClick = () => {
-  // Get the product IDs from the cart
-  const productIds = cart.map((product) => product.id);
-  navigate('/CheckPointButton', { state: { productIds, cart } });
-};
-
-  
-  
-  
 
   return (
     <div style={{ width: '80%', margin: '0 auto' }}>
@@ -97,68 +70,63 @@ const handleCheckpointClick = () => {
         </div>
       ) : (
         <div id="shopping-cart-list">
-          <h1 style={{ textAlign: 'center',marginTop: '2em' }}>Products In Cart</h1>
-          <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '20px',  marginTop: '3em' }}>
-<thead>
-  <tr>
-    <th style={tableHeaderStyle}></th>
-    <th style={tableHeaderStyle}>Product</th>
-    <th style={tableHeaderStyle}>Price</th>
-    <th style={tableHeaderStyle}>Quantity</th>
-    <th style={tableHeaderStyle}>Total Amount (GH)</th>
-    <th style={tableHeaderStyle}>Action</th>
-  </tr>
-</thead>
-<tbody>
-  {cart.map((product, index) => (
-    <tr
-      key={product.id}
-      style={{
-        borderBottom: index === cart.length - 1 ? 'none' : '1px solid #ccc',
-      }}
-    >
-      <td style={tableCellStyle}>
-        <img
-          style={{ width: '5em', height: '5em', borderRadius: '15px', marginRight: '10px' }}
-          src={Imageurl(product)}
-          alt={product.id}
-        />
-      </td>
-      <td style={tableCellStyle}>{product.name}</td>
-      <td style={tableCellStyle}>{product.price}</td>
-      <td style={{ textAlign: 'center' }}>
-        <div style={{ border: '1px solid #cfcbcb' }}>
-          <button onClick={() => reduceQuantity(product.id)} style={quantityButtonStyle}>-</button>
-          {product.count}
-          <button onClick={() => increaseQuantity(product.id)} style={quantityButtonStyle}>+</button>
+          <h1 style={{ textAlign: 'center', marginTop: '2em' }}>Products In Cart</h1>
+          <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '20px', marginTop: '3em' }}>
+            <thead>
+              <tr>
+                <th style={tableHeaderStyle}></th>
+                <th style={tableHeaderStyle}>Product</th>
+                <th style={tableHeaderStyle}>Price</th>
+                <th style={tableHeaderStyle}>Quantity</th>
+                <th style={tableHeaderStyle}>Total Amount (GH)</th>
+                <th style={tableHeaderStyle}>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cart.map((product, index) => (
+                <tr
+                  key={product.id}
+                  style={{
+                    borderBottom: index === cart.length - 1 ? 'none' : '1px solid #ccc',
+                  }}
+                >
+                  <td style={tableCellStyle}>
+                    <img
+                      style={{ width: '5em', height: '5em', borderRadius: '15px', marginRight: '10px' }}
+                      src={Imageurl(product)}
+                      alt={product.id}
+                    />
+                  </td>
+                  <td style={tableCellStyle}>{product.name}</td>
+                  <td style={tableCellStyle}>{product.price}</td>
+                  <td style={{ textAlign: 'center' }}>
+                    <div style={{ border: '1px solid #cfcbcb' }}>
+                      <button onClick={() => reduceQuantity(product.id)} style={quantityButtonStyle}>-</button>
+                      {product.count}
+                      <button onClick={() => increaseQuantity(product.id)} style={quantityButtonStyle}>+</button>
+                    </div>
+                  </td>
+                  <td style={tableCellStyle}>{(product.count * parseFloat(product.price)).toFixed(2)}</td>
+                  <td style={tableCellStyle}>
+                    <button onClick={() => removeFromCart(product.id)} style={actionButtonStyle}>
+                      <i className="fa fa-trash" aria-hidden="true"></i>
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p style={{ float: 'right' }}>Accumulated Total Amount: GH{calculateTotalAmount(cart)}</p>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <button onClick={() => handleCheckpointClick()}>Checkpoint</button>
+          </div>
         </div>
-      </td>
-      <td style={tableCellStyle}>{(product.count * parseFloat(product.price)).toFixed(2)}</td>
-      <td style={tableCellStyle}>
-        <button onClick={() => removeFromCart(product.id)} style={actionButtonStyle}><i className="fa fa-trash" aria-hidden="true"></i></button>
-      </td>
-    </tr>
-    
-  ))}
-
-</tbody>
-</table>
-      <p style={{float: 'right'}}>Accumulated Total Amount: GH{calculateTotalAmount(cart)}</p>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <button onClick={() => handleCheckpointClick()}>Checkpoint</button>
-        </div>
-    </div>
-    
-    
       )}
-      
     </div>
   );
 };
 
 export default CartContent;
-
-
 
 const tableHeaderStyle = {
   backgroundColor: '#f2f2f2',

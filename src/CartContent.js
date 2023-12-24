@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Imageurl from "./Photo";
 import { useNavigate } from "react-router-dom";
 import "./CartContent.css";
 
 const CartContent = ({ cart, updateCart, updateCartCount }) => {
   const navigate = useNavigate();
-  const [selectedProduct, setSelectedProduct] = React.useState(null);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   const increaseQuantity = (productId) => {
     const updatedCart = cart.map((product) => {
@@ -57,6 +57,7 @@ const CartContent = ({ cart, updateCart, updateCartCount }) => {
   const calculateTotalCount = (cart) => {
     return cart.reduce((count, product) => count + product.count, 0);
   };
+
   const calculateTotalAmount = (cart) => {
     return cart
       .reduce((total, product) => {
@@ -150,7 +151,10 @@ const CartContent = ({ cart, updateCart, updateCartCount }) => {
                 <h3>Cart Totals</h3> <br />
                 <p
                   className=""
-                  style={{ borderBottom: "1px solid black", marginTop: "3em" }}
+                  style={{
+                    borderBottom: "1px solid black",
+                    marginTop: "3em",
+                  }}
                 >
                   Total{" "}
                   <span style={{ float: "right" }}>

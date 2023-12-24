@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 function ForgotPassword({ enteredDetails, userName }) {
-  const [username, setUserName] = useState("");
   const [resetPassword, setResetPassword] = useState("");
 
   const handleReset = (e) => {
@@ -16,15 +15,16 @@ function ForgotPassword({ enteredDetails, userName }) {
     );
 
     if (findToReset) {
+      // Perform actions to reset the password
     }
   };
 
   return (
     <div style={{ margin: "2em" }}>
-      <form action={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <p>
-          Forgotten your password? then Please enter your username or email
-          address. You will receive a link to create a new password via email.
+          Forgotten your password? Please enter your username or email address.
+          You will receive a link to create a new password via email.
         </p>
         <input
           style={{

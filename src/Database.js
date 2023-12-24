@@ -5,11 +5,9 @@ export const initialProducts = [
     id: 1,
     count: 0,
     availableProduct: 0,
-    //imageId: 'V8SS4Yk'
     imageId: "GaO3Dq0b",
     category: "fruits",
   },
-
   {
     name: "Cabbage",
     price: "15.00",
@@ -17,7 +15,6 @@ export const initialProducts = [
     id: 2,
     count: 0,
     availableProduct: 5,
-    //imageId: 'TaIlXka'
     imageId: "pOI2ysTb",
     category: "vegetables",
   },
@@ -27,11 +24,9 @@ export const initialProducts = [
     id: 3,
     count: 0,
     availableProduct: 80,
-    //imageId: 'sTFwGPn'
     imageId: "3XdqWjIb",
     category: "fruits",
   },
-
   {
     name: "Pepper",
     price: "5.00",
@@ -47,18 +42,15 @@ export const initialProducts = [
     id: 5,
     count: 0,
     availableProduct: 25,
-    //imageId: 'j8WkZQX'
     imageId: "fiDTCPFb",
     category: "vegetables",
   },
-
   {
     name: "Orange(color)",
     price: "4.22",
     id: 6,
     count: 0,
     availableProduct: 35,
-    //imageId: 'lOqZoGL'
     imageId: "FoZWruFb",
     category: "fruits",
   },
@@ -68,17 +60,14 @@ export const initialProducts = [
     id: 7,
     count: 0,
     availableProduct: 35,
-    //imageId: 'lOqZoGL'
     imageId: "LuIDHn1b",
   },
-
   {
     name: "Apple",
     price: "2.00",
     id: 8,
     count: 0,
     availableProduct: 10,
-    //imageId: 'lOqZoGL'
     imageId: "0I998ijb",
     category: "fruits",
   },
@@ -88,7 +77,6 @@ export const initialProducts = [
     id: 9,
     count: 0,
     availableProduct: 10,
-    //imageId: 'lOqZoGL'
     imageId: "is4P1Tab",
     category: "fruits",
   },
@@ -98,7 +86,6 @@ export const initialProducts = [
     id: 10,
     count: 0,
     availableProduct: 10,
-    //imageId: 'lOqZoGL'
     imageId: "rfak9fPb",
     category: "fruits",
   },
@@ -108,7 +95,6 @@ export const initialProducts = [
     id: 11,
     count: 0,
     availableProduct: 25,
-    //imageId: 'j8WkZQX'
     imageId: "xlJGTUTb",
     category: "vegetables",
   },
@@ -118,7 +104,6 @@ export const initialProducts = [
     id: 12,
     count: 0,
     availableProduct: 25,
-    //imageId: 'j8WkZQX'
     imageId: "YLw1ZdJb",
     category: "vegetables",
   },
@@ -128,7 +113,6 @@ export const initialProducts = [
     id: 13,
     count: 0,
     availableProduct: 25,
-    //imageId: 'j8WkZQX'
     imageId: "CibJ9Fnb",
     category: "vegetables",
   },
@@ -138,7 +122,6 @@ export const initialProducts = [
     id: 14,
     count: 0,
     availableProduct: 25,
-    //imageId: 'j8WkZQX'
     imageId: "smM1BENb",
     category: "vegetables",
   },
@@ -148,7 +131,6 @@ export const initialProducts = [
     id: 15,
     count: 0,
     availableProduct: 25,
-    //imageId: 'j8WkZQX'
     imageId: "Gk5l7VLb",
     category: "vegetables",
   },
@@ -158,7 +140,6 @@ export const initialProducts = [
     id: 16,
     count: 0,
     availableProduct: 25,
-    //imageId: 'j8WkZQX'
     imageId: "5qJu1NYb",
     category: "vegetables",
   },

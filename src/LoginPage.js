@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./LoginPage.css";
 
 export default function LoginPage({ enteredDetails }) {
   const [userEmail, setUserEmail] = useState("");
   const [password, setPassword] = useState("");
-  //const navigate = useNavigate();
 
   const handleUserEmail = (e) => {
     setUserEmail(e.target.value);

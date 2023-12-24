@@ -1,22 +1,20 @@
 import React, { useState } from "react";
-import Navbar from "./NavBar.js";
-import { SiteDescription } from "./SiteDescription.js";
-import Home from "./Home.js";
-import Shop from "./Shop.js";
-import About from "./About.js";
-import Sales from "./Sales.js";
-import CartContent from "./CartContent.js";
+import Navbar from "./NavBar";
+import { SiteDescription } from "./SiteDescription";
+import Home from "./Home";
+import Shop from "./Shop";
+import About from "./About";
+import Sales from "./Sales";
+import CartContent from "./CartContent";
 
 import { Route, Routes } from "react-router-dom";
-//import Footer from './Footer'; //Import the Footer component
-import FinalFooter from "./FinalFooter.js";
-import { WhatsAppIcon } from "./WhatsAppIcon.js";
-//import { BeforeFooter } from './BeforeFooter';
-import CheckPointButton from "./CheckPointButton.js";
-import LoginPage from "./LoginPage.js";
-import SignupPage from "./SignupPage.js";
+import FinalFooter from "./FinalFooter";
+import { WhatsAppIcon } from "./WhatsAppIcon";
+import CheckPointButton from "./CheckPointButton";
+import LoginPage from "./LoginPage";
+import SignupPage from "./SignupPage";
 import Data from "./Data";
-import ForgotPassword from "./ForgotPassword.js";
+import ForgotPassword from "./ForgotPassword";
 
 export default function App() {
   const [cartCount, setCartCount] = useState(0);
@@ -35,7 +33,6 @@ export default function App() {
     <div>
       <Navbar cartCount={cartCount} cart={cart} />
       <Routes>
-        {<Route path="#" element={<SiteDescription />} />}
         <Route path="/Home" element={<Home />} />
         <Route
           path="/Shop"
@@ -78,8 +75,6 @@ export default function App() {
         />
       </Routes>
       <WhatsAppIcon />
-      {/*<BeforeFooter/>*/}
-      {/*<Footer />*/}
       <FinalFooter />
     </div>
   );

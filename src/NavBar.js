@@ -56,8 +56,6 @@ export default function Navbar({ cartCount }) {
         >
           Login
         </CustomLink>
-        {/*
-        <CustomLink to="/CartContent">Cart</CustomLink>  Use Link to navigate to CartContent */}
       </div>
       <div className="navbar-left">
         <Link to="#" className="site-name">
@@ -71,13 +69,11 @@ export default function Navbar({ cartCount }) {
         <CustomLink to="/Shop">Shop</CustomLink>
         <CustomLink to="/About">About</CustomLink>
         <CustomLink to="/Sales">Sales</CustomLink>
-        {/*
-        <CustomLink to="/CartContent">Cart</CustomLink>  Use Link to navigate to CartContent */}
       </div>
 
       <div className="navbar-right">
         <div className="login-icon">
-          <UserProfile to="/LoginPage" /*{cartCount={cartCount}}*/ />
+          <UserProfile to="/LoginPage" />
         </div>
         <div className="icon-float">
           <div>

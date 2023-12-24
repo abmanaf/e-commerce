@@ -1,4 +1,3 @@
-// DisplayUserDetails.jsx
 import React from "react";
 import "./DisplayUserDetails.css";
 
@@ -11,7 +10,6 @@ const DisplayUserDetails = ({ enteredDetails }) => {
           <tr style={{ textAlign: "center" }}>
             <th>First-name</th>
             <th>Last-name</th>
-            {/*<th>UserName</th>*/}
             <th>Email</th>
             <th>Password</th>
             <th>ID</th>
@@ -22,7 +20,6 @@ const DisplayUserDetails = ({ enteredDetails }) => {
             <tr key={user.id}>
               <td>{user.firstName}</td>
               <td>{user.lastName}</td>
-              {/*<td>{user.userName}</td>*/}
               <td>{user.email}</td>
               <td>{user.password}</td>
               <td>{user.id}</td>

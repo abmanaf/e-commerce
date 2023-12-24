@@ -49,33 +49,10 @@ const Shop = ({ cart, setCart, updateCartCount }) => {
   const calculateTotalCount = (cart) => {
     return cart.reduce((count, product) => count + product.count, 0);
   };
-  /*
-  const filterableProductList = products.map((product, index) => (
 
-    <div className='product-container'>
-    <li key={product.id}>
-      <div className="sub-product-container">
-        <img src={Imageurl(product)} alt={product.id} />
-        <br />
-         {product.name} <br /> <br />
-        <del style={{ color: 'red' }}>{product.previousPrice ? `₵${(product.previousPrice)}`: ''}</del> &cent;{product.price} 
-        <br />
-        {/* 
-        <span>{product.availableProduct ? <small style={{ color: 'green' }}><i>{product.availableProduct} Available in stock </i></small> : <small><i style={{ color: 'red' }}>Product is exhausted</i></small>}</span>
-        }
-        <br /><br />
-        <div className='addToCart'>
-        <button onClick={() => addToCart(product.id)}>Add To Cart</button>
-        </div>
-      </div>
-    </li>
-    </div>
-  ));
-
-*/
   const productList = filteredProducts.map((product, index) => (
-    <div className="product-container">
-      <li key={product.id}>
+    <div className="product-container" key={product.id}>
+      <li>
         <div className="sub-product-container">
           <img src={Imageurl(product)} alt={product.id} />
           <br />
@@ -85,10 +62,6 @@ const Shop = ({ cart, setCart, updateCartCount }) => {
           </del>{" "}
           &cent;{product.price}
           <br />
-          {/* 
-        <span>{product.availableProduct ? <small style={{ color: 'green' }}><i>{product.availableProduct} Available in stock </i></small> : <small><i style={{ color: 'red' }}>Product is exhausted</i></small>}</span>
-        */}
-          <br />
           <br />
           <div className="addToCart">
             <button onClick={() => addToCart(product.id)}>Add To Cart</button>
@@ -97,19 +70,12 @@ const Shop = ({ cart, setCart, updateCartCount }) => {
       </li>
     </div>
   ));
-  /*
-  const productRows = [];
-  for (let i = 0; i < productList.length; i += 4) {
-    const row = productList.slice(i, i + 4);
-    productRows.push(<div key={i / 4} style={{ display: 'flex', justifyContent: 'space-around' }}>{row}</div>);
-  }
-  */
 
   const healthyFruits = initialProducts
     .filter((item) => item.category === "fruits")
     .map((item) => (
-      <div className="fruit-container">
-        <li key={item.id}>
+      <div className="fruit-container" key={item.id}>
+        <li>
           <div className="sub-fruit-container">
             <img src={Imageurl(item)} alt={item.id} />
             <br />
@@ -118,7 +84,6 @@ const Shop = ({ cart, setCart, updateCartCount }) => {
               {item.previousPrice ? `₵${item.previousPrice}` : ""}
             </del>{" "}
             &cent;{item.price}
-            <br />
             <br />
             <br />
             <div className="addToCart">
@@ -141,11 +106,6 @@ const Shop = ({ cart, setCart, updateCartCount }) => {
           </div>
           <hr />
           <br />
-          {/** 
-<div className='fiter'> 
-          <strong>Filter <i class="fa fa-filter" aria-hidden="true"></i></strong>
-        </div>
-     */}
           <div className="sort-container" style={{ marginTop: "2em" }}>
             <label
               htmlFor="categoryFilter"
